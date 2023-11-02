@@ -1,0 +1,277 @@
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, hsl(266, 100%, 49%) 0%, hsl(264, 100%, 26%) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url('content/bg5.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+     background-attachment: fixed;
+}
+
+.header {
+    text-align: center;
+    margin-top: -250px;
+    font-family: "HalloweenYouAndMe", cursive; /* Substitua "SuaFonteEscritaAMao" pelo nome da fonte personalizada */
+}
+
+.header h1 {
+    font-size: 80px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s, text-shadow 0.3s;
+    transition: transform 0.3s;
+}
+
+.header h1:hover {
+    color:  hsl(266, 100%, 45%); /* Cor diferente quando o mouse passa por cima */
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Sombra mais forte quando o mouse passa por cima */
+    transform: scale(1.1);
+}
+
+.header h1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: hsl(266, 100%, 45%);
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header h1:hover::before {
+    transform: scaleX(1);
+}
+
+/* Estilos para os botões */
+.container {
+    text-align: center;
+}
+
+header {
+    background-color: transparent;
+    text-align: center;
+    padding: 20px 0;
+}
+
+ul.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0; /* Remova a margem para espaçamento uniforme */
+}
+
+ul.menu li {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Tornar os botões circulares */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Melhore a sombra */
+    position: relative;
+    background: transparent; /* Remova o fundo colorido */
+}
+
+.button a {
+    text-decoration: none;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.button .fas {
+    font-size: 40px;
+    color: #fff;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0,0 0.5);
+    background-color: hsl(266,100%,55%);    
+}
+
+.button.platforms {
+    background-color: hsl(266, 100%, 50%); /* Cor para Plataformas */
+    
+}
+
+.button.sharepoint {
+    background-color: hsl(266, 100%, 45%); /* Cor para Sharepoint */
+}
+
+.button.bi {
+    background-color: hsl(266, 100%, 40%); /* Cor para B.I */
+}
+
+.button.planners {
+    background-color: hsl(266, 100%, 35%); /* Cor para Planners */
+}
+
+.button.servicenow {
+    background-color: hsl(266, 100%, 30%); /* Cor para ServiceNow */
+}
+
+.button.plus {
+    background-color: hsl(266, 100%, 25%); /* Cor para ServiceNow */
+}
+
+.button:hover {
+    transform: scale(1.15);
+}
+
+.button.trainings {
+    background-color: hsl(266, 100%, 20%); /* Cor para ServiceNow */
+}
+
+.button.trainings .fas {
+    color: #fff; /* Cor do ícone para Treinamentos */
+}
+
+.button:nth-child(5) .fas {
+    color: hsl(207, 100%, 49); /* Cor específica para o ícone do ServiceNow */
+}
+
+.button:nth-child(5):hover {
+    transform: scale(1.15);
+}
+
+.sub-menu {
+    display: table-row-group;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 1;
+    text-align: left;
+    padding: 0;
+    animation: fadeIn 0.4s;
+    width: auto;
+    position: absolute;
+    top: 93%;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    flex-direction: row;
+    display: none;
+
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.01);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+.button:hover .sub-menu {
+    display:inline-block;
+    animation: fadeIn 0.4s;
+    transform: scaleY(1);
+    max-height: 500px;
+    overflow-y: hidden;
+    white-space: nowrap;
+    overflow-x: auto;
+    flex-direction: row;
+}
+
+.sub-menu ul {
+    list-style:symbols();
+    padding: 0;
+    margin: 0;
+}
+.sub-menu.active {
+    display: table-row-group;
+    animation: fadeIn 0.3s;
+    transform: scaleX(1);
+    transform-origin: left;
+    max-height: 100vh;
+    top: 0;
+    left: 0; /* Alinhe o submenu à esquerda */
+    width: 200px; /* Largura do submenu (ajuste conforme necessário) */
+    overflow-y: auto; /* Adicione uma barra de rolagem se o conteúdo ultrapassar a altura da janela */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    overflow-x: auto;
+    flex-direction: row;
+}
+
+.sub-menu a {
+    color: hsl(266, 100%, 45%);
+    text-decoration: none;
+    display: table-row;
+    align-items: center;
+    padding: 8px;
+    transition: background-color 0.2s;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    flex-direction: row;
+}
+
+.sub-menu a:last-child {
+    border-bottom: none;
+}
+
+.sub-menu a:hover {
+    background-color: #f2f2f2;
+    display: table-row
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.spotify-player {
+    position: fixed;
+    right: 10px; /* Ajuste a posição direita desejada */
+    bottom: 10px; /* Ajuste a posição inferior desejada */
+    border-radius: 12px;
+    animation: pulse 1s infinite;
+  }
+
+.footer {
+    color: white;
+    position:absolute;
+    margin-bottom: -700px;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+}
